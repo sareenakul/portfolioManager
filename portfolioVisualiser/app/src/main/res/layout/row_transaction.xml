@@ -6,18 +6,27 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/category_icon"
         android:layout_width="42dp"
         android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/category_bg"
+        android:padding="10dp"
         android:src="@drawable/stat"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+        tools:ignore="MissingConstraints"
+        app:tint="@color/white" />
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/category_icon"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -31,6 +40,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
@@ -39,7 +49,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/accounts_bg"
-                android:text="Cash" />
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="2dp"
+                android:text="Cash"
+                android:textColor="#FCFBFB" />
 
             <TextView
                 android:id="@+id/transaction_date"
@@ -48,7 +63,20 @@
                 android:layout_marginLeft="5sp"
                 android:layout_weight="1"
                 android:text="20 Nov, 2024"
+                android:textColor="#A09E9E"
                 android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/transaction_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="1000$"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
